@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoAmigos - Transformando o Futuro com Carinho</title>
+    <!-- Fonte Google fofa e arredondada -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">🌿</span> EcoAmigos
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#acoes">Missões</a></li>
+                    <li><a href="#dicas">Cantinho Verde</a></li>
+                    <li><a href="#calculadora">Super Calculadora</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <span class="badge">✨ Cuidando do Planeta com Amor</span>
+            <h1>Pequenos Passos, Um Mundo Gigante e Feliz!</h1>
+            <p>Descubra como salvar o planeta pode ser divertido, colorido e super fácil de fazer junto com a gente.</p>
+            <a href="#acoes" class="btn btn-primary">Começar Aventura 🚀</a>
+        </div>
+    </section>
+
+    <!-- CONTEÚDO: AÇÕES SUSTENTÁVEIS -->
+    <main class="container" id="acoes">
+        <div class="section-header">
+            <span class="section-tag">Super Poderes do Bem</span>
+            <h2 class="section-title">Missões Ecológicas</h2>
+            <p class="section-subtitle">Escolha sua missão favorita e transforme o seu dia a dia em pura harmonia com a natureza!</p>
+        </div>
+        
+        <div class="grid-acoes">
+            <div class="card card-1">
+                <div class="card-icon">🐢</div>
+                <div class="card-content">
+                    <h3>Amigos do Oceano</h3>
+                    <p>Reduza o uso de plásticos descartáveis e ajude a proteger os animais marinhos com escolhas super criativas no dia a dia.</p>
+                </div>
+            </div>
+
+            <div class="card card-2">
+                <div class="card-icon">🌻</div>
+                <div class="card-content">
+                    <h3>Energia Vibrante</h3>
+                    <p>Aproveite a luz do sol para alegrar a casa, apague luzes desnecessárias e sinta a energia boa fluindo em cada cômodo.</p>
+                </div>
+            </div>
+
+            <div class="card card-3">
+                <div class="card-icon">💧</div>
+                <div class="card-content">
+                    <h3>Guardiões da Água</h3>
+                    <p>Economize cada gotinha com banhos rápidos, torneiras bem fechadas e muito carinho com o recurso mais precioso da Terra.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- SEÇÃO INTERATIVA: DICAS -->
+    <section id="dicas" class="interativa-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag light">💡 Inspiração Fofa</span>
+                <h2 class="section-title text-dark">Cantinho das Ideias Mágicas</h2>
+                <p class="section-subtitle">Clique no botão para sortear uma dica super legal e fofinha para testar hoje!</p>
+            </div>
+            
+            <div class="dica-box">
+                <div class="dica-emoji">✨</div>
+                <h3 id="titulo-dica">Carona de Brincadeira</h3>
+                <p id="texto-dica">Que tal ir para a escola ou trabalho caminhando conversando com um amigo? Menos fumaça, mais sorrisos!</p>
+                <button class="btn btn-accent" onclick="gerarNovaDica()">Sortear Nova Ideia 🎲</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO INTERATIVA: CALCULADORA DE PEGADA DE CARBONO -->
+    <section class="calc-section" id="calculadora">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">🎮 Quiz Amigável</span>
+                <h2 class="section-title">Termômetro Ecológico</h2>
+                <p class="section-subtitle">Vamos descobrir juntos qual é o tamanho do seu superpoder verde?</p>
+            </div>
+            
+            <div class="calc-card">
+                <div class="input-group">
+                    <label for="transporte">🚗 Quantas horas por semana você usa carro ou moto?</label>
+                    <input type="number" id="transporte" placeholder="Ex: 4" min="0">
+                </div>
+                <div class="input-group">
+                    <label for="plastico">🥤 Quantos copinhos ou plásticos descartáveis você usa por dia?</label>
+                    <input type="number" id="plastico" placeholder="Ex: 2" min="0">
+                </div>
+                <button class="btn btn-primary" onclick="calcularImpacto()">Ver Meu Resultado Mágico 🎉</button>
+                <div id="resultado-calc" class="resultado-box" style="display: none;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">🌿 EcoAmigos</div>
+            <p>&copy; 2026 EcoAmigos. Espalhando amor e sustentabilidade por todo o planeta! 🌎💕</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT DE INTERATIVIDADE -->
+    <script>
+        const dicas = [
+            { emoji: "🛍️", titulo: "Sacolinha Retornável Divertida", texto: "Leve uma bolsinha de pano bem colorida para suas compras. É charmosa e salva o planeta!" },
+            { emoji: "🌱", titulo: "Horta na Caixinha", texto: "Guarde sementinhas de tomate ou temperos e plante em vasinhos fofos na sua janela." },
+            { emoji: "🔋", titulo: "Caça às Pilhas", texto: "Junte pilhas velhas em um vidrinho decorado e leve até um ponto de coleta especial." },
+            { emoji: "🚿", titulo: "Banho Flash", texto: "Coloque sua música favorita de 3 minutinhos e tente terminar o banho antes que ela acabe!" }
+        ];
+
+        function gerarNovaDica() {
+            const randomIndex = Math.floor(Math.random() * dicas.length);
+            const dicaSelecionada = dicas[randomIndex];
+            
+            const box = document.querySelector('.dica-box');
+            box.style.transform = 'scale(0.96) rotate(-1deg)';
+            setTimeout(() => {
+                document.querySelector('.dica-emoji').innerText = dicaSelecionada.emoji;
+                document.getElementById('titulo-dica').innerText = dicaSelecionada.titulo;
+                document.getElementById('texto-dica').innerText = dicaSelecionada.texto;
+                box.style.transform = 'scale(1) rotate(0deg)';
+            }, 150);
+        }
+
+        function calcularImpacto() {
+            const transporte = parseFloat(document.getElementById('transporte').value) || 0;
+            const plastico = parseFloat(document.getElementById('plastico').value) || 0;
+            
+            const score = (transporte * 2.5) + (plastico * 1.8);
+            const resBox = document.getElementById('resultado-calc');
+            resBox.style.display = 'block';
+
+            let mensagem = "";
+            if (score < 15) {
+                mensagem = "🌟 Uau! Você é um verdadeiro Guardião da Natureza! Seus hábitos são super leves e amorosos com a Terra.";
+                resBox.style.backgroundColor = "#e1fcf4";
+                resBox.style.borderColor = "#2ec4b6";
+            } else if (score < 40) {
+                mensagem = "💛 Muito bom! Você está no caminho certo. Que tal trocar mais alguns descartáveis por hábitos criativos?";
+                resBox.style.backgroundColor = "#fff9db";
+                resBox.style.borderColor = "#ffb703";
+            } else {
+                mensagem = "🌱 Opa! Tem bastante espaço para novos hábitos divertidos. Que tal começar a recusar plásticos hoje mesmo? Você consegue!";
+                resBox.style.backgroundColor = "#ffe5ec";
+                resBox.style.borderColor = "#ff5d8f";
+            }
+
+            resBox.innerHTML = `<strong>Resultado do Quiz:</strong><br>${mensagem}`;
+        }
+    </script>
+</body>
+</html>       
