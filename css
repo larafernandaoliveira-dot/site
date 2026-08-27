@@ -1,0 +1,391 @@
+/* ==========================================
+   1. VARIÁVEIS E CORES PASTEIS/VIVAS
+   ========================================== */
+:root {
+    --bg-color: #f7fff7;
+    --card-bg: #ffffff;
+    --green-mint: #2ec4b6;
+    --yellow-sun: #ffb703;
+    --coral-pink: #ff5d8f;
+    --purple-soft: #9b5de5;
+    --text-color: #2b2d42;
+    --text-muted: #6c757d;
+    --white: #ffffff;
+    --shadow-soft: 0 10px 25px rgba(46, 196, 182, 0.12);
+    --transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* ==========================================
+   2. CABEÇALHO FOFO
+   ========================================== */
+header {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--green-mint);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--coral-pink);
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   3. HERO SECTION COLORIDA E ALEGRE
+   ========================================== */
+.hero {
+    background: linear-gradient(135deg, #e0fbfc 0%, #cbf3f0 50%, #ffedf0 100%);
+    text-align: center;
+    padding: 7rem 2rem 6rem 2rem;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+
+.hero-content {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.badge {
+    background: var(--white);
+    color: var(--coral-pink);
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 15px rgba(255, 93, 143, 0.15);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    line-height: 1.25;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+}
+
+/* ==========================================
+   4. BOTÕES E COMPONENTES
+   ========================================== */
+.btn {
+    padding: 0.9rem 2.2rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary {
+    background-color: var(--green-mint);
+    color: var(--white);
+    box-shadow: 0 6px 20px rgba(46, 196, 182, 0.35);
+}
+
+.btn-primary:hover {
+    background-color: #239b90;
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(46, 196, 182, 0.5);
+}
+
+.btn-accent {
+    background-color: var(--coral-pink);
+    color: var(--white);
+    box-shadow: 0 6px 20px rgba(255, 93, 143, 0.35);
+}
+
+.btn-accent:hover {
+    background-color: #e0487a;
+    transform: translateY(-4px) scale(1.02);
+}
+
+/* ==========================================
+   5. SEÇÕES E TÍTULOS
+   ========================================== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+}
+
+.section-header {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 3.5rem auto;
+}
+
+.section-tag {
+    color: var(--coral-pink);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.section-tag.light {
+    color: var(--yellow-sun);
+}
+
+.section-title {
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 0.8rem;
+}
+
+.section-title.text-dark {
+    color: var(--text-color);
+}
+
+.section-subtitle {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+}
+
+/* ==========================================
+   6. CARDS DE MISSÕES (BEM COLORIDOS)
+   ========================================== */
+.grid-acoes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 24px;
+    padding: 2.5rem 2rem;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition);
+    border-bottom: 6px solid;
+}
+
+.card-1 { border-color: var(--green-mint); }
+.card-2 { border-color: var(--yellow-sun); }
+.card-3 { border-color: var(--coral-pink); }
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    background: #fdfdfd;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.card-content h3 {
+    color: var(--text-color);
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+}
+
+.card-content p {
+    color: var(--text-muted);
+    font-size: 0.98rem;
+}
+
+/* ==========================================
+   7. SEÇÃO INTERATIVA (CANTINHO DAS IDEIAS)
+   ========================================== */
+.interativa-section {
+    background: linear-gradient(135deg, #fff3b0 0%, #ffc6ff 100%);
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.dica-box {
+    background: var(--white);
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 3rem 2.5rem;
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(155, 93, 229, 0.12);
+    transition: transform 0.2s ease;
+}
+
+.dica-emoji {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.dica-box h3 {
+    color: var(--purple-soft);
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.dica-box p {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+/* ==========================================
+   8. CALCULADORA (TERMÔMETRO ECOLÓGICO)
+   ========================================== */
+.calc-section {
+    background-color: var(--bg-color);
+}
+
+.calc-card {
+    background: var(--white);
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 3rem;
+    border-radius: 24px;
+    box-shadow: var(--shadow-soft);
+    border: 2px solid #eef2f3;
+}
+
+.input-group {
+    margin-bottom: 1.8rem;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+    color: var(--text-color);
+    font-size: 0.98rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 14px;
+    font-size: 1rem;
+    background: #fdfdfd;
+    transition: var(--transition);
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--green-mint);
+    box-shadow: 0 0 0 4px rgba(46, 196, 182, 0.15);
+}
+
+.resultado-box {
+    margin-top: 2rem;
+    padding: 1.2rem 1.5rem;
+    border-left: 6px solid var(--green-mint);
+    text-align: left;
+    border-radius: 12px;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   9. RODAPÉ FOFO
+   ========================================== */
+footer {
+    background-color: #2b2d42;
+    color: var(--white);
+    text-align: center;
+    padding: 3rem 2rem;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    color: var(--green-mint);
+}
+
+footer p {
+    opacity: 0.8;
+    font-size: 0.95rem;
+}
+
+/* ==========================================
+   10. RESPONSIVIDADE
+   ========================================== */
+@media (max-width: 768px) {
+    .hero h1 { 
+        font-size: 2.2rem; 
+    }
+    .nav-links { 
+        display: none; 
+    }
+    .container {
+        padding: 3.5rem 1.2rem;
+    }
+    .calc-card, .dica-box {
+        padding: 2rem 1.2rem;
+    }
+}
